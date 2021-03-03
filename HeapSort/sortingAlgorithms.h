@@ -1,9 +1,5 @@
 #include "compFunctions.h"
 
-/*----------------- Quicksort functions -----------------*/
-void quicksort(void ** array,int p,int r,sortingColumn columnId);
-int partition(void ** array,int p,int r,sortingColumn columnId);
-
 /*----------------- Heapsort functions ------------------*/
 int getLeft(int i);
 int getRight(int i);
