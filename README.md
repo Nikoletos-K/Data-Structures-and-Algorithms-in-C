@@ -5,7 +5,7 @@
 # Data-Stuctures-and-Algorithms-in-C
 Here you will find some data structures and algorithms implemented in C. These algorithms are mostly based on the book ___Introduction to Algorithms by Thomas H. Cormen___.
 
-
+## Usability
 
 ## Compile and Execution
 
@@ -26,7 +26,7 @@ Here you will find some data structures and algorithms implemented in C. These a
 
 ## Algorithms
 
-| Data structure | Information |
+| Algorithm | Information |
 | --- | --- |
 | __HeapSort__ | |
 | __QuickSort__ | |
@@ -34,3 +34,7 @@ Here you will find some data structures and algorithms implemented in C. These a
 | __Queue__ | |
 | __MaxHeap__ | |
 | __Hash functions__ | |
+
+## Unit-Testing
+
+
