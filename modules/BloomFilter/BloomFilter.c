@@ -2,8 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Bloom_Filter.h"
-#include "Hash_Functions.h"
+#include "./../../include/BloomFilter.h"
+
+unsigned int (*hashFunction_1)(char *) =  StringHashFunction_RS;
+unsigned int (*hashFunction_2)(char *) =  StringHashFunction_BKDR;
+unsigned int (*hashFunction_3)(char *) =  StringHashFunction_DEK;
+
 
 unsigned int size_of_bitArray(unsigned int numOfVoters){
 
@@ -47,29 +51,29 @@ int checkBit(BF * bf,unsigned int hash){				/* Same method as above */
 }
 
 
-void insertBF(BF * bf,unsigned int length, char * identity){
+void insertBF(BF * bf,char * identity){
 
 		unsigned int hash1,hash2,hash3;
 
-		hash1=hashFunction_1(identity,length)%bf->size;				/* Hash = hash1 % size , that gives me the position i xill enter the bit in the BF */
+		hash1=hashFunction_1(identity)%bf->size;				/* Hash = hash1 % size , that gives me the position i xill enter the bit in the BF */
 		setBit(bf,hash1);
 
-		hash2=hashFunction_2(identity,length)%bf->size;				/* Same */
+		hash2=hashFunction_2(identity)%bf->size;				/* Same */
 		setBit(bf,hash2);
 
-		hash3=hashFunction_3(identity,length)%bf->size;			
+		hash3=hashFunction_3(identity)%bf->size;			
 		setBit(bf,hash3);
 
 }
 
 
-int checkBF(BF * bf,unsigned int length, char * identity){
+int checkBF(BF * bf, char * identity){
 
 	int flag=0;
 	unsigned int hash1,hash2,hash3;
-	hash1=hashFunction_1(identity,length)%bf->size;
-	hash2=hashFunction_2(identity,length)%bf->size;
-	hash3=hashFunction_3(identity,length)%bf->size;	
+	hash1=hashFunction_1(identity)%bf->size;
+	hash2=hashFunction_2(identity)%bf->size;
+	hash3=hashFunction_3(identity)%bf->size;	
 
 	if(checkBit(bf,hash1))								/* It has to be all equal to 1 */
 		if(checkBit(bf,hash2))
@@ -77,8 +81,7 @@ int checkBF(BF * bf,unsigned int length, char * identity){
 				flag=1;
 	
 
-	return flag;	
-
+	return flag;
 }
 
 void destroyBF(BF * bf){

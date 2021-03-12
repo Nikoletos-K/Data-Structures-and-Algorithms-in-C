@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Hash_Table.h"
+#include "./../../include/HashFunctions.h"
 
 unsigned int firstPrime(unsigned int min,unsigned int max){
 
@@ -24,8 +24,9 @@ unsigned int firstPrime(unsigned int min,unsigned int max){
 }
 
 
-unsigned int hashFunction_1(char * str,unsigned int length){
+unsigned int StringHashFunction_RS(char * str){
 
+	unsigned int length = strlen(str);
 	unsigned int b    = 378551;
 	unsigned int a    = 63689;
  	unsigned int hash = 0;
@@ -42,8 +43,9 @@ unsigned int hashFunction_1(char * str,unsigned int length){
 }
 
 
-unsigned int hashFunction_2(char * str,unsigned int length){
+unsigned int StringHashFunction_BKDR(char * str){
 
+	unsigned int length = strlen(str);
 	unsigned int seed = 131; 
 	unsigned int hash = 0;
 	unsigned int i=0;
@@ -56,8 +58,9 @@ unsigned int hashFunction_2(char * str,unsigned int length){
    return hash;
 }
 
-unsigned int hashFunction_3(char * str,unsigned int length){
+unsigned int StringHashFunction_DEK(char * str){
 
+	unsigned int length = strlen(str);
 	unsigned int hash = 0;
 	unsigned int i=0;
 
@@ -69,3 +72,10 @@ unsigned int hashFunction_3(char * str,unsigned int length){
 	return hash;
 
 }
+
+/*
+ * Copyright notice: All rights reserved to:                                                      *
+ * Author: Arash Partow - 2002                                            *
+ * URL: http://www.partow.net                                             *
+ * URL: http://www.partow.net/programming/hashfunctions/index.html        *
+*/
