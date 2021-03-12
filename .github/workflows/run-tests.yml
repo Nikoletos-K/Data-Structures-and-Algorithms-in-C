@@ -1,0 +1,30 @@
+name: run-tests
+on: [push, pull_request]
+
+jobs:
+  build-deploy:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-latest]
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: make
+      run: make
+    
+    - name: make run-tests
+      run: make run-tests
+
+#     - name: make valgrind-tests
+#       if: matrix.os == 'ubuntu-16.04'
+#       run: |
+#         sudo apt install valgrind
+#         make valgrind-tests CFLAGS=-fPIC
+    
+    - name: Upload
+      if: startsWith(github.event.ref, 'refs/tags/v')
+      uses: actions/upload-artifact@v2
+      with:
+        name: compiled-${{ matrix.os }}
+        path: .
