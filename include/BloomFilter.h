@@ -9,8 +9,6 @@ typedef struct BloomFilter{
 
 }BF;
 
-
-
 // Get size
 unsigned int size_of_bitArray(unsigned int numOfVoters);
 

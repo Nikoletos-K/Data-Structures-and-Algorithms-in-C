@@ -51,7 +51,7 @@ override CFLAGS += -g -Werror -Wall -MMD -I$(INCLUDE)
 # Linker options
 #   -lm        Link με τη math library
 #
-LDFLAGS += -lm -lpthread
+LDFLAGS += -lm
 
 # Αν στα targets με τα οποία έχει κληθεί το make (μεταβλητή MAKECMDGOALS) υπάρχει κάποιο
 # coverage*, τότε προσθέτουμε το --coverage στα compile & link flags
