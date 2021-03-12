@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "./../include/acutest.h"
-#include "./../include/HashTable.h"
+#include "./../include/HashTable_withRBT.h"
 
 /* ----- Comparator testing ------ */
 int compare_ints(const void * a, const void * b) {

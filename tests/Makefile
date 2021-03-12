@@ -7,10 +7,10 @@ List_test_OBJS = List_test.o $(MODULES)/List/List.o
 Queue_test_OBJS = Queue_test.o $(MODULES)/Queue/Queue.o
 RBTree_test_OBJS = RBTree_test.o $(MODULES)/RBTree/RBTree.o
 DisJointSet_test_OBJS = DisJointSet_test.o $(MODULES)/DisJointSet/DisJointSet.o
+HashTable_test_OBJS = HashTable_test.o $(MODULES)/HashTable_withRBT/HashTable.o $(MODULES)/RBTree/RBTree.o
 
 
 
-# HashTable_test_OBJS = HashTable_test.o $(MODULES)/HashTable/HashTable.o $(MODULES)/RBTree/RBTree.o
 # Dataset_test_OBJS  = Dataset_test.o ./../programs/EntityResolution/Vectorization.o  $(MODULES)/Dataset/Dataset.o
 # LogisticRegression_test_OBJS  = LogisticRegression_test.o 	./../programs/EntityResolution/Vectorization.o $(MODULES)/BitArray/bitArray.o  $(MODULES)/LogisticRegression/LogisticRegression.o
 # LogisticRegression_test_OBJS  = LogisticRegression_test.o   $(MODULES)/LogisticRegression/LogisticRegression.o  $(MODULES)/JobScheduler/JobScheduler.o $(MODULES)/Queue/Queue.o
