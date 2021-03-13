@@ -10,8 +10,7 @@ HeapSort_test_OBJS = HeapSort_test.o $(MODULES)/HeapSort/HeapSort.o $(MODULES)/C
 QuickSort_test_OBJS = QuickSort_test.o $(MODULES)/QuickSort/QuickSort.o $(MODULES)/Comparators/Comparators.o
 maxHeap_test_OBJS = maxHeap_test.o $(MODULES)/MaxHeap/maxHeap.o $(MODULES)/Comparators/Comparators.o
 HashTable_withList_test_OBJS = HashTable_withList_test.o $(MODULES)/HashTable_withList/HashTable_withList.o $(MODULES)/Comparators/Comparators.o $(MODULES)/HashFunctions/HashFunctions.o
-
-
+HashTable_withBucketstoRBT_test_OBJS = HashTable_withBucketstoRBT_test.o $(MODULES)/HashTable_withBucketstoRBT/HashTable_withBucketstoRBT.o $(MODULES)/Comparators/Comparators.o $(MODULES)/HashFunctions/HashFunctions.o $(MODULES)/RBTree/RBTree.o
 
 # Makefile main body
 include ../common.mk
