@@ -1,3 +1,14 @@
+/*
+ **************************************************************************
+ * Author: Konstantinos Nikoletos                                         *
+ * URL: http://github.com/Nikoletos-K                                     *
+ *                                                                        *
+ * Copyright notice:   													  *
+ * Free use this code is permitted under the guidelines 				  *
+ * and in accordance with the MIT License. 						  	      * 
+ *                                                                        *
+ **************************************************************************
+*/
 /*  Based on book Introduction to Algorithms ,Thomas H. Cormen (p. 566 - Greek edition)*/
 #pragma once
 #include <stdio.h>

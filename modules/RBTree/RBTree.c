@@ -275,6 +275,159 @@ void RBTInsertFixUP(RBTNode **treeRoot,RBTNode * z){
 	SetColor(*treeRoot,BLACK);							/* Make root always BLACK !!!! */
 }
 
+
+/*-----------------------------------Delete_function-------------------------------------*/
+
+
+void RBTReplaceNode(RBTNode **treeRoot,RBTNode * u,RBTNode * v){			/*Changing pointers*/
+
+	if(GetParent(u)==GUARD)
+		(*treeRoot) = v;
+	else if( u == GetParent(u)->left)
+		GetParent(u)->left = v;
+	else
+		GetParent(u)->right = v;
+
+
+	v->parent = GetParent(u);
+}
+
+void RBTRemoveNode(RBTNode **treeRoot , RBTNode * z){
+
+	RBTNode  * y = z ,* x ;
+
+	nodeColor color = GetColor(y);			
+
+	if(z->left == GUARD){					/* If node is a leaf just remove him and fix the pointers */
+		
+		x =z->right;
+		RBTReplaceNode(treeRoot,z,z->right);
+
+	}else if(z->right == GUARD){			/*As above */
+
+		x = z->left;
+		RBTReplaceNode(treeRoot,z,z->left);
+	
+	}else{
+
+		y = z->right;					/* Go to the right and find the minimum node - as in as simple bst removal */
+		while(y->left !=GUARD)
+			y = y->left;
+
+		color = GetColor(y);
+
+		x = y->right;					/* Exchange with x */
+
+		if(GetParent(y) == z)			/* If y is the child of z just replace them */
+			x->parent = y;
+		else{									
+			RBTReplaceNode(treeRoot,y,y->right);		/* if no then fix the pointers and set data of the correct node */
+			y->right = z->right;
+			y->right->parent = y;
+		}
+
+		RBTReplaceNode(treeRoot,z,y);
+
+
+		y->left = z->left;
+		y->left->parent = y;
+		SetColor(y,GetColor(z));			/* y is in the correct position initialize it's values from z */
+
+	}
+
+	RBTDestroyNode(z);				/* Delete the node that we wanted to delete */
+	if(color == BLACK)
+		RBTDeletionFixUP(treeRoot,x);		/* Fix Violations */
+
+}
+
+void RBTDeletionFixUP(RBTNode **treeRoot,RBTNode * x){
+
+	while(x != *treeRoot && GetColor(x)==BLACK){
+
+		if(x == GetParent(x)->left){
+
+			RBTNode * w = GetParent(x)->right;
+		
+			if(GetColor(w)==RED){			/*Case 1: if sibling is red just recolor w and it's parent and do a rotation */
+
+				SetColor(w,BLACK);
+				SetColor(GetParent(x),RED);
+				RotateLeft(treeRoot,GetParent(x));
+				w = GetParent(x)->right;
+
+			}
+
+			if(GetColor(w->left)==BLACK 			/*Case 2: if sibling of x is black and both of w children are black*/
+				&& GetColor(w->right)==BLACK){
+
+				SetColor(w,RED);					//Recolor w
+				x = GetParent(x);					//Change x
+
+			}else {
+
+				
+				if(GetColor(w->right)==BLACK){		/*Case 3: if sibling of x is red and right child of w is black and left child is red*/
+
+					SetColor(w->left,BLACK);
+					SetColor(w,RED);
+					RotateRight(treeRoot,w);
+					w = GetParent(x)->right;
+				}
+
+				SetColor(w,GetColor(GetParent(x)));		/* Case 4 : if sibling of x is red and right child of w is black */
+				SetColor(GetParent(x),BLACK);
+				SetColor(w->right,BLACK);
+				RotateLeft(treeRoot,GetParent(x));
+				x = *treeRoot;
+			}
+
+		}else{											/* As above  because cases are symmetrical */
+
+			if(x == GetParent(x)->right){
+
+				RBTNode * w = GetParent(x)->left;
+			
+				if(GetColor(w)==RED){
+					
+					SetColor(w,BLACK);
+					SetColor(GetParent(x),RED);
+					RotateRight(treeRoot,GetParent(x));
+					w = GetParent(x)->left;
+				}
+
+				if( GetColor(w->right)==BLACK && GetColor(w->left)==BLACK){
+
+					SetColor(w,RED);
+					x = GetParent(x);
+
+				}else {
+
+					if(GetColor(w->left)==BLACK){
+
+						SetColor(w->right,BLACK);
+						SetColor(w,RED);
+						RotateLeft(treeRoot,w);
+						w = GetParent(x)->left;
+					}
+
+					SetColor(w,GetColor(GetParent(x)));
+					SetColor(GetParent(x),BLACK);
+					SetColor(w->left,BLACK);
+					RotateRight(treeRoot,GetParent(x));
+					x = *treeRoot;
+				}
+
+			}
+
+		
+		}	
+	}
+	SetColor(x,BLACK);				/* Always set x as black , because if loop stop , it may x be the root an root must always be black */
+}
+
+
+
 /*---------------------------------Destructors----------------------------------*/
 
 

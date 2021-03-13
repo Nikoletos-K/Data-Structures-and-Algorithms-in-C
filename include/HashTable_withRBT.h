@@ -1,3 +1,14 @@
+/*
+ **************************************************************************
+ * Author: Konstantinos Nikoletos                                         *
+ * URL: http://github.com/Nikoletos-K                                     *
+ *                                                                        *
+ * Copyright notice:   													  *
+ * Free use this code is permitted under the guidelines 				  *
+ * and in accordance with the MIT License. 						  	      * 
+ *                                                                        *
+ **************************************************************************
+*/
 #pragma once
 
 #include "./RBTree.h"
@@ -28,7 +39,7 @@ void HTInsert(HashTable * ht,keyType key,void * data,int (*comparator)(valueType
 /*------------Getters-----------------*/
 
 unsigned int hashCode(HashTable * ht,keyType key);
-unsigned int hashFunction(char * str,unsigned int length);
+unsigned int hashFunction(char * str);
 
 /*--------------Search_function-------------------*/
 

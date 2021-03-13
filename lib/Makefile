@@ -6,7 +6,11 @@ objectives.a_OBJS = 													\
 	$(MODULES)/RBTree/RBTree.o 											\
 	$(MODULES)/DisJointSet/DisJointSet.o 								\
 	$(MODULES)/Queue/Queue.o 											\
-	$(MODULES)/HashTable_withRBT/HashTable.o 							\
+	$(MODULES)/HashTable_withRBT/HashTable_withRBT.o 					\
+	$(MODULES)/Comparators/Comparators.o 								\
 
+# 	$(MODULES)/JobScheduler/JobScheduler.o 								\
+
+	
 
 include ../common.mk	

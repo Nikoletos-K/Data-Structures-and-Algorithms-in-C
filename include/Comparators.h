@@ -11,24 +11,10 @@
 */
 #pragma once
 
-#include "./HashFunctions.h"
+#define empty NULL
 
-typedef struct BloomFilter{
 
-	char * bitArray;
-	unsigned int size;
-
-}BF;
-
-// Get size
-unsigned int size_of_bitArray(unsigned int numOfVoters);
-
-// BloomFilter functions
-BF * createBF(unsigned int size);
-void insertBF(BF * bf, char * identity);
-int checkBF(BF * bf, char * identity);
-void destroyBF(BF * bf);
-
-// Bit-Array functions
-void setBit(BF * bf,int hash);
-int checkBit(BF * bf,unsigned int hash);
+int compare_ints(const void * a, const void * b);
+int compare_str(const void * str1,const void * str2);
+int compare_longs(const void * long1,const void * long2);
+int compare_floats(const void * float1,const void * float2);
