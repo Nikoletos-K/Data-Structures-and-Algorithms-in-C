@@ -14,9 +14,10 @@ Every module consists of at least one header file (.h) and one source file that 
 
  1. Find the data structure or algorithm you need from ```/modules```
  2. Download the module directory (e.g ```/modules/List```) that contains the source code .c file (e.g ```List.c```) 
- 3. Go to ```/include/``` folder and find the header (.h) file that you want (e.g ```List.h```)
+ 3. Go to ```/include/``` folder, find the header (.h) file that you want (e.g ```List.h```) and download it.
  4. ❕ Not finished yet ❕, now go and check the header file (.h) and download  what is included (Commands ```#include "foo.h"```). Most of the modules include for example ```HashFunctions``` or ```Comparators``` or even other data structures. Spot what is needed and download __all__ files.
- 5. Everything is ready, hope it helped you!    
+ 5. Fix the paths to the ```#include "foo.h"``` if you change the current folder structure.
+ 6. Everything is ready, hope it helped you!
 
 ## Compile and Execution
 If you clone the whole folder you can run:
@@ -24,7 +25,7 @@ If you clone the whole folder you can run:
 - ```make run-tests```: which compiles every module and executes all tests
 - ```make valgind-tests```:  which compiles every module and executes all tests using valgrind
 
-## Data structures
+## Appendix
 
 | Data structure | Information |
 | --- | --- |
@@ -38,8 +39,7 @@ If you clone the whole folder you can run:
 | __MaxHeap__ | |
 | __DisJointSet__ | |
 
-
-## Algorithms
+---
 
 | Algorithm | Information |
 | --- | --- |
@@ -49,7 +49,8 @@ If you clone the whole folder you can run:
 | __Queue__ | |
 | __Hash functions__ | |
 
-## Utilities
+---
+
 | Utility | Information |
 | --- | --- |
 | __Comparators__ | |
