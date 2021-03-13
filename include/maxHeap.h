@@ -1,3 +1,18 @@
+/*
+ **************************************************************************
+ * Author: Konstantinos Nikoletos                                         *
+ * URL: http://github.com/Nikoletos-K                                     *
+ *                                                                        *
+ * Copyright notice:   													  *
+ * Free use this code is permitted under the guidelines 				  *
+ * and in accordance with the MIT License. 						  	      * 
+ *                                                                        *
+ **************************************************************************
+*/
+#pragma once
+
+#include "./Comparators.h"		// we need Comparators
+
 #define LEFT 0
 #define RIGHT 1
 
@@ -28,12 +43,12 @@ void swap(heapNode * hn1,heapNode * hn2);
 heapNode * getParent(heapNode * hn);
 
 // fixViolations
-void heapifyUp(Heap * heap,heapNode * hn,int (*comparator)(void *,void *));
-void heapifyDown(Heap * heap,heapNode * hn,int depth,int (*comparator)(void *,void *));
+void heapifyUp(Heap * heap,heapNode * hn,int (*comparator)(const void *,const void *));
+void heapifyDown(Heap * heap,heapNode * hn,int depth,int (*comparator)(const void *,const void *));
 
 // insertion-extraction functions
-void insert_toHeap(Heap * heap,void * value,int (*comparator)(void *,void *));
-void * extractMax_fromHeap(Heap * heap,int (*comparator)(void *,void *));
+void insert_toHeap(Heap * heap,void * value,int (*comparator)(const void *,const void *));
+void * extractMax_fromHeap(Heap * heap,int (*comparator)(const void *,const void *));
 
 // destructors
 void destroyNode(heapNode * rmNode,int leftORright,Heap * heap);

@@ -1,12 +1,8 @@
 #include <stdio.h>
 
-#include "HeapSort.h"
+#include "./../../include/HeapSort.h"
 
 /* Recurcive - Generic implementation of heapsort */
-
-int (*compare)(void*,void*);
-compare = compareIntegers;
-
 
 // Exchange is a swap function
 void exchange(void ** array,int pos1,int pos2){
@@ -23,9 +19,9 @@ int getRight(int i){return 2*i+1;}
 
 int getParent(int i){return i/2;}
 
-void maxHeapify(void ** array,int heapSize,int i ){	
+void maxHeapify(void ** array,int heapSize,int i,int (*compare)(const void*,const void*)){	
 	
-	// Mainntaining the heap property,while inserting a new element 
+	// Maintaining the heap property,while inserting a new element 
 
 	int left = getLeft(i);
 	int right = getRight(i);
@@ -41,48 +37,25 @@ void maxHeapify(void ** array,int heapSize,int i ){
 
 	if(largest!=i){
 		exchange(array,i,largest);		// Swap pointers into array
-		maxHeapify(array,heapSize,largest);	// Recurcive call of this function
+		maxHeapify(array,heapSize,largest,compare);	// Recurcive call of this function
 	}
 }
 
-void buildMaxHeap(void ** array,int heapSize){		
+void buildMaxHeap(void ** array,int heapSize,int (*compare)(const void*,const void*)){		
 
 	int length = --heapSize;	// heapSize - 1 , because of array : 0,...,size-1
 	for(int i = length/2; i>=0 ;i--){	// for every element in the heap -> length/2
-		maxHeapify(array,heapSize,i);
+		maxHeapify(array,heapSize,i,compare);
 	}
 }
 
-void heapsort(void ** array,int heapSize){
+void heapsort(void ** array,int heapSize,int (*compare)(const void*,const void*)){
 
-	buildMaxHeap(array,heapSize);
+	buildMaxHeap(array,heapSize,compare);
 	int temp = heapSize-1;
 	for(int i = heapSize-1;i>=1;i--){	// For every element of the array
 		exchange(array,0,i);	// Swap it with the first 
 		temp--;		// Decrease heap size
-		maxHeapify(array,temp,0);	//Rec-call to maintain properties 
+		maxHeapify(array,temp,0,compare);	//Rec-call to maintain properties 
 	}
 }
-
-
-int compareStrings(void * str1,void * str2){
-
-	return strcmp((char *) str1, (char*) str2);
-} 
-
-int compareIntegers(void * int1,void * int2){
-
-	return (*(int *) int1 - *(int *) int2);
-}
-
-
-int compareLongs(void * long1,void * long2){
-
-	return (*(long *) long1 - *(long *) long2);
-}
-
-int compareFloats(void * float1,void * float2){
-
-	return (*(float *) float1 - *(float *) float2);
-}
-

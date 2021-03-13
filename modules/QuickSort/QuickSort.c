@@ -1,9 +1,7 @@
 #include <stdio.h>
 
-#include "QuickSort.h"
+#include "./../../include/QuickSort.h"
 
-int (*compare)(void*,void*);
-compare = compareIntegers;
 
 /*---- Recursive - Generic implementation of quicksort ---------------*/
 
@@ -16,16 +14,16 @@ void exchange(void ** array,int pos1,int pos2){
 
 }
 
-void quicksort(void ** array,int p,int r){
+void quicksort(void ** array,int p,int r,int (*compare)(const void*,const void*)){
 
 	if(p<r){
-		int q = partition(array,p,r);	/* pivot */
-		quicksort(array,p,q-1);
-		quicksort(array,q+1,r);
+		int q = partition(array,p,r,compare);	/* pivot */
+		quicksort(array,p,q-1,compare);
+		quicksort(array,q+1,r,compare);
 	}
 }
 
-int partition(void ** array,int p,int r){
+int partition(void ** array,int p,int r,int (*compare)(const void*,const void*)){
 
 	void * value = array[r];	// pivot element
 	int i = p-1;
@@ -40,26 +38,3 @@ int partition(void ** array,int p,int r){
 
 	return i+1;
 }
-
-
-int compareStrings(void * str1,void * str2){
-
-	return strcmp((char *) str1, (char*) str2);
-} 
-
-int compareIntegers(void * int1,void * int2){
-
-	return (*(int *) int1 - *(int *) int2);
-}
-
-
-int compareLongs(void * long1,void * long2){
-
-	return (*(long *) long1 - *(long *) long2);
-}
-
-int compareFloats(void * float1,void * float2){
-
-	return (*(float *) float1 - *(float *) float2);
-}
-

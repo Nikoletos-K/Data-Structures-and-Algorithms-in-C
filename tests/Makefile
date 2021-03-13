@@ -6,6 +6,9 @@ RBTree_test_OBJS = RBTree_test.o $(MODULES)/RBTree/RBTree.o
 DisJointSet_test_OBJS = DisJointSet_test.o $(MODULES)/DisJointSet/DisJointSet.o
 HashTable_withRBT_test_OBJS = HashTable_withRBT_test.o $(MODULES)/HashTable_withRBT/HashTable_withRBT.o $(MODULES)/RBTree/RBTree.o
 Comparators_test_OBJS = Comparators_test.o $(MODULES)/Comparators/Comparators.o
+HeapSort_test_OBJS = HeapSort_test.o $(MODULES)/HeapSort/HeapSort.o $(MODULES)/Comparators/Comparators.o
+QuickSort_test_OBJS = QuickSort_test.o $(MODULES)/QuickSort/QuickSort.o $(MODULES)/Comparators/Comparators.o
+maxHeap_test_OBJS = maxHeap_test.o $(MODULES)/MaxHeap/maxHeap.o $(MODULES)/Comparators/Comparators.o
 
 
 

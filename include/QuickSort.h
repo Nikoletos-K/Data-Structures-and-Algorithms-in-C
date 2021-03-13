@@ -1,8 +1,17 @@
-void quicksort(void ** array,int p,int r);
-int partition(void ** array,int p,int r);
+/*
+ **************************************************************************
+ * Author: Konstantinos Nikoletos                                         *
+ * URL: http://github.com/Nikoletos-K                                     *
+ *                                                                        *
+ * Copyright notice:   													  *
+ * Free use this code is permitted under the guidelines 				  *
+ * and in accordance with the MIT License. 						  	      * 
+ *                                                                        *
+ **************************************************************************
+*/
+#pragma once
 
-/* --- Comparators ----- */
-int compareStrings(void * str1,void * str2);
-int compareIntegers(void * int1,void * int2);
-int compareLongs(void * long1,void * long2);
-int compareFloats(void * float1,void * float2);
+#include "./Comparators.h"		// we need Comparators
+
+void quicksort(void ** array,int p,int r,int (*compare)(const void*,const void*));
+int partition(void ** array,int p,int r,int (*compare)(const void*,const void*));

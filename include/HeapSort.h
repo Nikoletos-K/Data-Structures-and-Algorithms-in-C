@@ -1,12 +1,25 @@
+/*
+ **************************************************************************
+ * Author: Konstantinos Nikoletos                                         *
+ * URL: http://github.com/Nikoletos-K                                     *
+ *                                                                        *
+ * Copyright notice:   													  *
+ * Free use this code is permitted under the guidelines 				  *
+ * and in accordance with the MIT License. 						  	      * 
+ *                                                                        *
+ **************************************************************************
+*/
+#pragma once
+#include "./Comparators.h"		// we need Comparators
+
 void exchange(void ** array,int pos1,int pos2);
+
+/* Getters */
 int getLeft(int i);
 int getRight(int i);
 int getParent(int i);
-void maxHeapify(void ** array,int heapSize,int i);
-void heapsort(void ** array,int heapSize);
 
-/* --- Comparators ----- */
-int compareStrings(void * str1,void * str2);
-int compareIntegers(void * int1,void * int2);
-int compareLongs(void * long1,void * long2);
-int compareFloats(void * float1,void * float2);
+/* Heap main utility */
+void buildMaxHeap(void ** array,int heapSize,int (*compare)(const void*,const void*));
+void maxHeapify(void ** array,int heapSize,int i,int (*compare)(const void*,const void*));
+void heapsort(void ** array,int heapSize,int (*compare)(const void*,const void*));

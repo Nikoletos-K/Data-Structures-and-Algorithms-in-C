@@ -8,6 +8,10 @@ objectives.a_OBJS = 													\
 	$(MODULES)/Queue/Queue.o 											\
 	$(MODULES)/HashTable_withRBT/HashTable_withRBT.o 					\
 	$(MODULES)/Comparators/Comparators.o 								\
+	$(MODULES)/HeapSort/HeapSort.o 										\
+	$(MODULES)/QuickSort/QuickSort.o 									\
+	$(MODULES)/MaxHeap/maxHeap.o 									\
+
 
 # 	$(MODULES)/JobScheduler/JobScheduler.o 								\
 

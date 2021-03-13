@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "maxHeap.h"
+#include "./../../include/maxHeap.h"
 
 /* -------------- Constructors ----------------*/
 
@@ -38,7 +38,7 @@ void swap(heapNode * hn1,heapNode * hn2){
 }
 heapNode * getParent(heapNode * hn){ return hn->parent; }
 
-void heapifyUp(Heap * heap,heapNode * hn,int (*comparator)(void *,void *)){		/* function that changes nodes from down to top of the tree in order to maintain max heap conditions*/
+void heapifyUp(Heap * heap,heapNode * hn,int (*comparator)(const void *,const void *)){		/* function that changes nodes from down to top of the tree in order to maintain max heap conditions*/
 	
 	if(hn->parent == NULL){		/* base case : when node is root */
 		heap->root = hn;		/* inform root */
@@ -51,7 +51,7 @@ void heapifyUp(Heap * heap,heapNode * hn,int (*comparator)(void *,void *)){		/* 
 	}	
 }
 
-void heapifyDown(Heap * heap,heapNode * hn,int depth,int (*comparator)(void *,void *)){
+void heapifyDown(Heap * heap,heapNode * hn,int depth,int (*comparator)(const void *,const void *)){
 
 	if(depth == (int)log2(heap->size))	/* base case: when depth reach leafs */
 		return;
@@ -76,7 +76,7 @@ void heapifyDown(Heap * heap,heapNode * hn,int depth,int (*comparator)(void *,vo
 	}
 }
 
-void insert_toHeap(Heap * heap,void * value,int (*comparator)(void *,void *)){
+void insert_toHeap(Heap * heap,void * value,int (*comparator)(const void *,const void *)){
 
 	if(heap->size==0){		// if heap is empty - first insertion
 		heap->root = create_heapNode(value);
@@ -117,20 +117,15 @@ void insert_toHeap(Heap * heap,void * value,int (*comparator)(void *,void *)){
 	heapifyUp(heap,newhn,comparator);	// maintain heap coditions until root
 }
 
-void * extractMax_fromHeap(Heap * heap,int (*comparator)(void *,void *)){
+void * extractMax_fromHeap(Heap * heap,int (*comparator)(const void *,const void *)){
 
 	if(heap==NULL)
-		#ifdef WITH_UI
-			printf("ERROR: Heap does't exist\n");
-		#else
-			printf("error\n");
-		#endif
+		return NULL;
 
 	if(heap->size==1){		// if extracting the last node
 		heap->size--;
 		void * temp = heap->root->value ;
 		free(heap->root);
-		destroyHeap(heap);
 		return temp;
 	}
 
@@ -175,6 +170,6 @@ void destroyNode(heapNode * rmNode,int leftORright,Heap * heap){
 }
 
 void destroyHeap(Heap * heap){ 
-	free(heap);	
+	if(heap!=NULL) free(heap);	
 	heap = NULL;
 }
