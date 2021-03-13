@@ -15,12 +15,6 @@ jobs:
     
     - name: make run-tests
       run: make run-tests
-
-#     - name: make valgrind-tests
-#       if: matrix.os == 'ubuntu-16.04'
-#       run: |
-#         sudo apt install valgrind
-#         make valgrind-tests CFLAGS=-fPIC
     
     - name: Upload
       if: startsWith(github.event.ref, 'refs/tags/v')
