@@ -40,7 +40,12 @@ Here you will find some data structures and algorithms implemented in C. These a
 | --- | --- |
 | __Comparators__ | |
 | __Hash functions__ | |
+| __Job Scheduler with Threads__ | |
+
 
 ## Unit-Testing
 
 
+---
+
+© Konstantinos Nikoletos
