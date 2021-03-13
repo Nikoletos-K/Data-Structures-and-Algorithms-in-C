@@ -21,6 +21,7 @@ Here you will find some data structures and algorithms implemented in C. These a
 | __Hashtable with lists__ | |
 | __Hashtable with Red-black tree__ | |
 | __Hashtable with buckets to Red-black tree__ | |
+| __MaxHeap__ | |
 | __DisJointSet__ | |
 
 
@@ -32,7 +33,6 @@ Here you will find some data structures and algorithms implemented in C. These a
 | __QuickSort__ | |
 | __List__ | |
 | __Queue__ | |
-| __MaxHeap__ | |
 | __Hash functions__ | |
 
 ## Unit-Testing
