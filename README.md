@@ -35,6 +35,12 @@ Here you will find some data structures and algorithms implemented in C. These a
 | __Queue__ | |
 | __Hash functions__ | |
 
+## Utilities
+| Utility | Information |
+| --- | --- |
+| __Comparators__ | |
+| __Hash functions__ | |
+
 ## Unit-Testing
 
 
