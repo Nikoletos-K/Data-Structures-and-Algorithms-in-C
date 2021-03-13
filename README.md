@@ -9,10 +9,20 @@
 # Data-Stuctures-and-Algorithms-in-C
 Here you will find some data structures and algorithms implemented in C. These algorithms are mostly based on the book ___Introduction to Algorithms by Thomas H. Cormen___.
 
-## Usability
+## Instructions
+Every module consists of at least one header file (.h) and one source file that contains the code corpus (.c). In order to use one of these modules I suggest you to follow these steps:
+
+ 1. Find the data structure or algorithm you need from ```/modules```
+ 2. Download the module directory (e.g ```/modules/List```) that contains the source code .c file (```List.c```) 
+ 3. Go to ```/include/``` folder and find the header (.h) file that you want (e.g ```List.h```)
+ 4. ❕ Not finished yet, now go and check to the header file what also must be included for this structure. Most of the modules include for example ```HashFunctions``` or ```Comparators``` or even other data structures. Spot what is needed and download all files.
+ 5. Everything is ready, hope it helped you!    
 
 ## Compile and Execution
-
+If you clone the whole folder you can run:
+- ```make```: That compliles every module 
+- ```make run-tests```: which compiles every module and executes all tests
+- ```make valgind-tests```:  which compiles every module and executes all tests using valgrind
 
 ## Data structures
 
