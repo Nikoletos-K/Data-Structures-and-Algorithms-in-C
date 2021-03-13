@@ -5,23 +5,6 @@
 #include "./../include/acutest.h"			// Απλή βιβλιοθήκη για unit testing
 #include "./../include/RBTree.h"
 
-int compare_ints(const void * a, const void * b) {
-	return *(int*)a - *(int*)b;
-}
-
-int compare_str(const void * str1,const void * str2){
-    return strcmp((char*) str1,(char*) str2);
-}
-
-void test_comparators(void){
-
-	int small=1,big=2;
-	TEST_ASSERT(compare_ints((void*)&small,(void*)&big)<0);
-
-	char * a = "a";
-	char * b = "b";
-	TEST_ASSERT(compare_str((void*)a,(void*)b) == strcmp(a,b));
-}
 
 void test_initializeDataStructures(void){
 	initializeDataStructures();
@@ -165,7 +148,6 @@ void test_RBTempty(void){
 }
 
 TEST_LIST = {
-	{"comparators",test_comparators},
 	{"initializeDataStructures",test_initializeDataStructures},
 	{"RBTConstruct",test_RBTConstruct},
 	{"RBTInitialiseKey",test_RBTInitialiseKey},

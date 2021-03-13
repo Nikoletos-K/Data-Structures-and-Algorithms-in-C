@@ -11,6 +11,8 @@
 */
 #pragma once
 
+#include "./Comparators.h"
+
 enum nodeColor { BLACK, RED };
 
 typedef enum nodeColor nodeColor;

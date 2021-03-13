@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./HashTable_withRBT.h"
+#include "./../../include/HashTable_withRBT.h"
 
 unsigned int hashFunction(char * str){
 
