@@ -3,7 +3,23 @@ A Bloom filter is a space-efficient probabilistic data structure, conceived by B
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bloom_filter.svg/360px-Bloom_filter.svg.png)
 
-## Functionality
+## Instructions
+For using this bloom filter follow these steps:
+1. Download this directory ```BloomFilter``` which contains 
+2. Go to directory ```include``` and download also ```BloomFilter.h```
+3. __Repeat the same steps for ```HashFunctions```__
+4. Fix the ```#include``` paths
+5. Ready!
+
+## Main Functionality
+```
+BF * createBF(unsigned int size);         // Creates bloom filter
+void insertBF(BF * bf, char * identity);  // Inserts a char* value 
+int checkBF(BF * bf, char * identity);    // Searchs a char* value
+void destroyBF(BF * bf);                  // Destroyes the structure, no memory leaks 
+```
+
+## Definition
 Bloom filter used to speed up answers in a key-value storage system. Values are stored on a disk which has slow access times. Bloom filter decisions are much faster. However some unnecessary disk accesses are made when the filter reports a positive (in order to weed out the false positives). Overall answer speed is better with the Bloom filter than without the Bloom filter. Use of a Bloom filter for this purpose, however, does increase memory usage
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bloom_filter_speed.svg/360px-Bloom_filter_speed.svg.png)
