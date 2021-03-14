@@ -5,7 +5,7 @@ A Bloom filter is a space-efficient probabilistic data structure, conceived by B
 
 ## Instructions
 For using this bloom filter follow these steps:
-1. Download this directory ```BloomFilter``` which contains 
+1. Download this directory ```BloomFilter``` which contains file ```BloomFilter.c```
 2. Go to directory ```include``` and download also ```BloomFilter.h```
 3. __Repeat the same steps for ```HashFunctions```__
 4. Fix the ```#include``` paths
