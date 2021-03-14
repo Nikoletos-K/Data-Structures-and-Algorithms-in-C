@@ -39,7 +39,7 @@ For n items:
 | | Complexity |
 |--- | --- |
 | Average | O(nlogn) |
-| Worst-case | (n\*n) |
+| Worst-case | O(n\*n) |
 
 
 ## Resources
