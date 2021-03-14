@@ -16,6 +16,15 @@ A max-heap is a complete binary tree in which the value in each internal node is
 
 ![](https://www.tutorialspoint.com/data_structures_algorithms/images/max_heap_animation.gif)
 
+## Time Complexity 
+For n items:
+| | Complexity |
+|--- | --- |
+| Pop Max | O(1) |
+| Extract Max | O(logn) |
+| Insert | O(logn) |
+
+
 ## Structure
 ```
 typedef struct  heapNode{
