@@ -35,7 +35,7 @@ Although somewhat slower in practice on most machines than a well-implemented qu
 Heapsort was invented by J. W. J. Williams in 1964. This was also the birth of the heap, presented already by Williams as a useful data structure in its own right. In the same year, R. W. Floyd published an improved version that could sort an array in-place, continuing his earlier research into the treesort algorithm.
 
 ## Complexity
-Overall time complexity of Heap Sort is O(nLogn)
+Overall time complexity of Heap Sort is O(nlogn)
 
 ## Resources
 [Wikipedia](https://en.wikipedia.org/wiki/Heapsort)
