@@ -58,7 +58,7 @@ If you clone the whole folder you can run:
 
 
 ## Unit-Testing
-For the testing of the structures but also of the models that we have created, we used the library ```acutest.h```.\
+For the testing of the structures but also of the models that we have created, we used the library ```acutest.h```.
 
 
 More information about the [acutest library](https://github.com/mity/acutest)
