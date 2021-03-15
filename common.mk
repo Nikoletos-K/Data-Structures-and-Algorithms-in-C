@@ -73,7 +73,7 @@ lcov:
 	@echo "$$PWD/coverage/index.html"
 
 coverage-%: clean run-% lcov
-	@true 						# dummy εντολή, γιατί ένα pattern rule αγνοείται αν δεν υπάρχουν εντολές για το target)
+	@true
 coverage: clean run lcov
 
 $(RUN_TARGETS):
