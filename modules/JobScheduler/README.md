@@ -1,7 +1,7 @@
 # Job Scheduler - Threads implementation
 Created a multi-thread job scheduler using Unix pthreads.
 
-The module in the folder /modules/JobScheduler consists of:
+The module in the folder ```/modules/JobScheduler``` consists of:
 
 - A scheduler, which actually accepts jobs and assigns them to threads, uses a priority queue to temporarily store the jobs. 
 - I have a thread pool and a continuous flow of independent jobs. When a task is created, it enters the scheduler's priority queue and waits to be executed. 
