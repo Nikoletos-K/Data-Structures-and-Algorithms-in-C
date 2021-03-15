@@ -63,6 +63,11 @@ For the testing of the structures but also of the models that we have created, w
 
 More information about the [acutest library](https://github.com/mity/acutest)
 
+## Future work
+Creating simple programs (main functions) as use examples for all the modules.
+
+
+☑️ __Some modules have been made in collaboration with [Myrto Iglezou](https://github.com/Myrto-Iglezou)__.
 
 ---
 
