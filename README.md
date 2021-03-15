@@ -1,4 +1,6 @@
 [![run-tests](https://github.com/Nikoletos-K/Data-Stuctures-and-Algorithms-in-C/actions/workflows/run-tests.yml/badge.svg)](https://github.com/Nikoletos-K/Data-Stuctures-and-Algorithms-in-C/actions/workflows/run-tests.yml)
+
+
 ![](https://img.shields.io/badge/Language-%20C-blue)  
 ![](https://img.shields.io/badge/Made%20with-Markdown-1f425f)
 ![](https://img.shields.io/pypi/l/ansicolortags)
@@ -6,7 +8,7 @@
 
 ---
 
-# Data-Stuctures-and-Algorithms-in-C
+# Data Stuctures and Algorithms implemented with C language
 Here you will find some data structures and algorithms implemented in C. These algorithms are mostly based on the book ___Introduction to Algorithms by Thomas H. Cormen___.
 
 ## Instructions
