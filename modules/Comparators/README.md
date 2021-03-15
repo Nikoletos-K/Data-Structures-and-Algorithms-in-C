@@ -1,7 +1,6 @@
 # Comparator functions
 
-In these files, you fing a generic implementation for multiple types, about comparing values
-
+Comparators used for generic data structures and algorithms
 
 ## Main functionality
 I'e created functions that return:
