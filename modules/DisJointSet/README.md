@@ -1,5 +1,5 @@
 # DisJoint Set
-The Disjoint set data structure was used to create clicks. It is essentially an array of integers, where each position represents a spec and the value of this position stores the "father" of the spec, ie elements with the same "father" belong and in the same clique. After reading the Dataset W, any positive correlation implies that the two elements belong to the same clique. Then the table is updated.
+Disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that stores a collection of disjoint (non-overlapping) sets. Equivalently, it stores a partition of a set into disjoint subsets. It provides operations for adding new sets, merging sets (replacing them by their union), and finding a representative member of a set. The last operation allows to find out efficiently if any two elements are in the same or different sets.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/UnionFindKruskalDemo.gif/250px-UnionFindKruskalDemo.gif)
 
