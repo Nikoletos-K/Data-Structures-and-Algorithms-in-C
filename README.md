@@ -52,7 +52,7 @@ If you clone the whole folder you can run:
 
 
 ## Unit-Testing
-For the testing of the structures but also of the models that we have created, we used the library ```acutest.h```.
+For the testing of the modules that have been created, I used the library ```acutest.h```.
 
 
 More information about the [acutest library](https://github.com/mity/acutest)
@@ -61,7 +61,7 @@ More information about the [acutest library](https://github.com/mity/acutest)
 Creating simple programs (main functions) as use examples for all the modules.
 
 
-☑️ __Some modules have been made in collaboration with [Myrto Iglezou](https://github.com/Myrto-Iglezou)__.
+☑️ __Some modules have been made in collaboration with [Myrto Iglezou](https://github.com/Myrto-Iglezou)__. ☑️
 
 ---
 
