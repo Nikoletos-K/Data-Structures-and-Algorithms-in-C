@@ -70,4 +70,4 @@ Creating simple programs (main functions) as use examples for all the modules.
 
 ---
 
-© Konstantinos Nikoletos
+© Konstantinos Nikoletos | 2021
