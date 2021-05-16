@@ -1,6 +1,8 @@
 # Priority Queue
 Double linked list with pointers to start and end of it. Generic implementation.
 
+![](https://www.programmersought.com/images/642/edb2bf9245ead82b7215646db8cd1f9a.gif)
+
 ## Definition
 Priority queue is an abstract data type similar to a regular queue or stack data structure in which each element additionally has a "priority" associated with it. In a priority queue, an element with high priority is served before an element with low priority.
 
