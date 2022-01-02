@@ -21,6 +21,8 @@ If you clone the whole folder you can run:
 
 ## Appendix
 
+### Data structures
+
 | Data structure | Definition |
 | --- | --- |
 | [__Bloom filter__](https://github.com/Nikoletos-K/Data-Structures-and-Algorithms-in-C/tree/main/modules/BloomFilter) | Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not – in other words, a query returns either "possibly in set" or "definitely not in set". Elements can be added to the set, but not removed (though this can be addressed with the counting Bloom filter variant); the more items added, the larger the probability of false positives. |
@@ -35,12 +37,16 @@ If you clone the whole folder you can run:
 | [__Job Scheduler with Threads__](https://github.com/Nikoletos-K/Data-Structures-and-Algorithms-in-C/tree/main/modules/JobScheduler) | Multi-thread job scheduler using Unix pthreads. |
 
 
+### Algorithms
+
+
 | Algorithm | Definition |
 | --- | --- |
 | [__HeapSort__](https://github.com/Nikoletos-K/Data-Structures-and-Algorithms-in-C/tree/main/modules/HeapSort) | Heapsort is a comparison-based sorting algorithm. Heapsort can be thought of as an improved selection sort: like selection sort, heapsort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element from it and inserting it into the sorted region. Unlike selection sort, heapsort does not waste time with a linear-time scan of the unsorted region; rather, heap sort maintains the unsorted region in a heap data structure to more quickly find the largest element in each step. |
 | [__QuickSort__](https://github.com/Nikoletos-K/Data-Structures-and-Algorithms-in-C/tree/main/modules/QuickSort) | Quicksort is an efficient sorting algorithm. Developed by British computer scientist Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting. When implemented well, it can be somewhat faster than merge sort and about two or three times faster than heapsort. |
 
 
+### Utilities
 
 | Utility | Definition |
 | --- | --- |
@@ -60,6 +66,4 @@ Creating simple programs (main functions) as use examples for all the modules.
 
 __Some modules have been made in collaboration with [Myrto Iglezou](https://github.com/Myrto-Iglezou)__.
 
----
-
-© Konstantinos Nikoletos | 2021
+© Konstantinos Nikoletos 2021
